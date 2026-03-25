@@ -92,3 +92,22 @@ SELECT city, COUNT(*) AS total
 FROM student
 GROUP BY city
 HAVING total = 1;
+
+-- practise having HAVING is used with GROUP BY to filter results after grouping.
+-- 👉 Use HAVING when you are using:
+-- COUNT()
+-- AVG()
+-- SUM()
+-- MAX()
+-- MIN()
+
+-- 👉 Alias = temporary name given to a column or table (AS) USED BELOW CODE
+SELECT city, COUNT(*) AS total
+FROM student
+GROUP BY city
+HAVING total > 1;
+
+SELECT city, AVG(age) AS avg_age
+FROM student
+GROUP BY city
+HAVING avg_age > 25;
