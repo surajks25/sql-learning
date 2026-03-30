@@ -111,3 +111,35 @@ SELECT city, AVG(age) AS avg_age
 FROM student
 GROUP BY city
 HAVING avg_age > 25;
+
+-- having based on task
+-- Show cities where number of students is greater than 1
+SELECT city, COUNT(*) AS total
+FROM student
+GROUP BY city
+HAVING total > 1;
+
+-- Show cities where average age is greater than 25
+SELECT city, AVG(age) AS avg_age
+FROM student
+GROUP BY city
+HAVING avg_age > 25;
+
+-- Show city with highest number of students
+SELECT city, COUNT(*) AS total
+FROM student
+GROUP BY city
+ORDER BY total DESC
+LIMIT 1;
+
+-- Find total students in Bangalore
+SELECT COUNT(*) AS total
+FROM student
+WHERE city = 'bangalore';
+
+-- Find cities where minimum age is less than 20
+SELECT city, MIN(age) AS min_age
+FROM student
+GROUP BY city
+HAVING min_age < 20;
+
